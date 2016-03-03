@@ -81,7 +81,7 @@ void add_arc (node *graph[graphElements], char fromNode, char toNode) {
         add_node (graph, fromNode);
     }
 
-    int positionToNode = search_for_node (graph, fromNode);
+    int positionToNode = search_for_node (graph, toNode);
     if (positionToNode == -1) {
         add_node (graph, toNode);
     }
@@ -284,7 +284,7 @@ int main() {
             list_nodes (graph);
             break;
         case 8:
-            //TODO: ����� �� ���������� �� ��������� ������. ;)
+            //TODO: MAIN WORK. ;)
             one_arc_in_and_one_out (graph);
             break;
         case 9:
