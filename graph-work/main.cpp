@@ -34,7 +34,7 @@ int search_for_node (node *graph[graphElements], char key){
 
 bool search_for_arc (node *graph[graphElements], char fromNode, char toNode){
     int positionFromNode = search_for_node(graph, fromNode);
-    int positionToNode = search_for_node(graph, fromNode);
+    int positionToNode = search_for_node(graph, toNode);
 
     if (positionFromNode != -1 && positionToNode != -1) {
         node *nextNode = graph[positionFromNode];
