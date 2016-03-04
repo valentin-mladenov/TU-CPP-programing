@@ -27,10 +27,8 @@ void init(node *graph[graphElements]){
  */
 int search_for_node (node *graph[graphElements], char key){
     for (int i = 0; i < graphElements; ++i) {
-        if (graph[i] != nullptr) {
-            if (graph[i]->key == key) {
-                return i;
-            }
+        if (graph[i] != nullptr && graph[i]->key == key) {
+            return i;
         }
     }
 
@@ -219,7 +217,7 @@ int main() {
 
     char key_from, key_to, node_key;
     int command;
-    
+
     while (true) {
         cout << endl << endl << "Main Menu" << endl;
         cout << "1 -  ADD NODE" << endl;
@@ -235,68 +233,68 @@ int main() {
         cin >> command;
 
         switch (command) {
-        case 1:
-            cout << "Enter node (char): ";
-            cin >> node_key;
+            case 1:
+                cout << "Enter node (char): ";
+                cin >> node_key;
 
-            add_node (graph, node_key);
-            break;
-        case 2:
-            cout << "Enter FROM node  ";
-            cin >> key_from;
-            cout << " TO node ";
-            cin >> key_to;
+                add_node (graph, node_key);
+                break;
+            case 2:
+                cout << "Enter FROM node  ";
+                cin >> key_from;
+                cout << " TO node ";
+                cin >> key_to;
 
-            add_arc (graph, key_from, key_to);
-            break;
-        case 3:
-            cout << "DELETE node (char): ";
-            cin >> node_key;
+                add_arc (graph, key_from, key_to);
+                break;
+            case 3:
+                cout << "DELETE node (char): ";
+                cin >> node_key;
 
-            delete_node (graph, node_key);
-            break;
-        case 4:
-            cout << "DELETE arc FROM ";
-            cin >> key_from;
-            cout << " TO ";
-            cin >> key_to;
+                delete_node (graph, node_key);
+                break;
+            case 4:
+                cout << "DELETE arc FROM ";
+                cin >> key_from;
+                cout << " TO ";
+                cin >> key_to;
 
-            delete_arc (graph, key_from, key_to);
-            break;
-        case 5:
-            cout << "Search for node ";
-            cin >> node_key;
+                delete_arc (graph, key_from, key_to);
+                break;
+            case 5:
+                cout << "Search for node ";
+                cin >> node_key;
 
-            if (search_for_node (graph, node_key)> -1) {
-                cout << "Node FOUND." << endl;
-            } else {
-                cout << "Node NOT FOUND." << endl;
-            }
-            break;
-        case 6:
-            cout << "Search for arc FROM ";
-            cin >> key_from;
-            cout << " TO ";
-            cin >> key_to;
+                if (search_for_node (graph, node_key) > -1) {
+                    cout << "Node FOUND." << endl;
+                } else {
+                    cout << "Node NOT FOUND." << endl;
+                }
+                break;
+            case 6:
+                cout << "Search for arc FROM ";
+                cin >> key_from;
+                cout << " TO ";
+                cin >> key_to;
 
-            if (search_for_arc (graph, key_from, key_to)) {
-                cout << "Arc FOUND." << endl;
-            } else {
-                cout << "Arc NOT FOUND." << endl;
-            }
-            break;
-        case 7:
-            list_nodes (graph);
-            break;
-        case 8:
-            //TODO: MAIN WORK. ;)
-            one_arc_in_and_one_out (graph);
-            break;
-        case 9:
-            return 0;
-        default:
-            cout << "What are you doing chose from 1-9. I****.";
-            break;
+                if (search_for_arc (graph, key_from, key_to)) {
+                    cout << "Arc FOUND." << endl;
+                } else {
+                    cout << "Arc NOT FOUND." << endl;
+                }
+                break;
+            case 7:
+                list_nodes (graph);
+                break;
+            case 8:
+                //TODO: MAIN WORK. ;)
+                one_arc_in_and_one_out (graph);
+                break;
+            case 9:
+                return 0;
+            default:
+                cout << "What are you doing chose from 1-9. I****.";
+                break;
         }
     }
 }
