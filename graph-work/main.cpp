@@ -163,55 +163,6 @@ void list_nodes (node *graph[graphElements]) {
     }
 }
 
-void one_arc_in_and_one_out (node *graph[graphElements]) {
-    // first find all that have ONlY one arc OUT.
-    map<char, int> all_with_one_out;
-    for (int i = 0; i < graphElements; i++) {
-        if (graph[i] == nullptr) {
-            continue;
-        }
-
-        if (graph[i]->next == nullptr) {
-            continue;
-        }
-
-        if (graph[i]->next->next == nullptr) {
-            //all_with_one_out[i] = graph[i]->key;
-            all_with_one_out[graph[i]->key] = 1;
-        }
-    }
-
-    // now lets check how many have incoming arcs.
-    for (int i = 0; i < graphElements; i++) {
-        node *temp;
-        if (graph[i] == nullptr){
-            continue;
-        }
-        temp = graph[i]->next;
-
-        while (temp != nullptr) {
-            map<char, int>::iterator node_found = all_with_one_out.find (temp->key);
-            if (node_found == all_with_one_out.end()) {
-                temp = temp->next;
-                continue;
-            }
-
-            if (node_found->second <= 2) {
-                node_found->second++;
-                temp = temp->next;
-                continue;
-            }
-
-            all_with_one_out.erase(node_found);
-            temp = temp->next;
-        }
-    }
-
-    for(auto it = all_with_one_out.begin(); it != all_with_one_out.end(); ++it) {
-        cout << it->first << " ";
-    }
-}
-
 int main() {
     init(graph);
 
@@ -227,7 +178,7 @@ int main() {
         cout << "5 -  SEARCH NODE" << endl;
         cout << "6 -  SEARCH ARC" << endl;
         cout << "7 -  PRINT ALL" << endl;
-        cout << "8 -  FIND ALL WITH ONE INBOUND AND ONE OUTBOUND ARC" << endl;
+        cout << "8 -  TASK EXECUTION" << endl;
         cout << "9 -  EXIT" << endl;
         cout << "\n\n Chose command (1-9): ";
         cin >> command;
@@ -288,7 +239,6 @@ int main() {
                 break;
             case 8:
                 //TODO: MAIN WORK. ;)
-                one_arc_in_and_one_out (graph);
                 break;
             case 9:
                 return 0;
