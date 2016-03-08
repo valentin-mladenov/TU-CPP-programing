@@ -1,13 +1,12 @@
+//
+// Created by hudson on 6.3.2016 г..
+//
+
 #include <iostream>
 #include <vector>
 #include <map>
 
 using namespace std;
-
-
-/*
- * testing some github integration
- */
 
 const int graphElements = 5;
 struct node {
@@ -15,7 +14,7 @@ struct node {
     node *next;
 } *graph[graphElements];
 
-void init(node *graph[graphElements]){
+void init(node *graph[graphElements]) {
     for (int i = 0; i < graphElements; ++i) {
         graph[i] = nullptr;
     }
@@ -238,7 +237,7 @@ int main() {
                 list_nodes (graph);
                 break;
             case 8:
-                //TODO: MAIN WORK. ;)
+                // TODO: MAIN WORK. ;)
                 break;
             case 9:
                 return 0;

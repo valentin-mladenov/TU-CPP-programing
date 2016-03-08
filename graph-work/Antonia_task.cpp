@@ -2,6 +2,7 @@
 // Created by hudson on 6.3.2016 г..
 //
 
+/*
 #include <iostream>
 #include <vector>
 #include <map>
@@ -69,3 +70,4 @@ void two_arc_out_and_none_in (node *graph[graphElements]) {
         cout << it->first << " ";
     }
 }
+*/

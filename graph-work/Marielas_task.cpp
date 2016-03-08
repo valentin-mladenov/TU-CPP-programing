@@ -1,5 +1,5 @@
 //
-// Created by hudson on 6.3.2016 г..
+// Created by hudson on 8.3.2016 г..
 //
 
 /*
@@ -15,21 +15,17 @@ struct node {
     node *next;
 } *graph[graphElements];
 
-void one_arc_in_and_one_out (node *graph[graphElements]) {
-    // first find all that have ONlY one arc OUT.
-    map<char, int> all_with_one_out;
+void delete_all_isolated_nodes(node *graph[graphElements]) {
+    // first find all that do not have OUTBOUND arcs.
+    map<char, int> all_with_none_out;
     for (int i = 0; i < graphElements; i++) {
         if (graph[i] == nullptr) {
             continue;
         }
 
         if (graph[i]->next == nullptr) {
+            all_with_none_out[graph[i]->key] = 1;
             continue;
-        }
-
-        if (graph[i]->next->next == nullptr) {
-            //all_with_one_out[i] = graph[i]->key;
-            all_with_one_out[graph[i]->key] = 1;
         }
     }
 
@@ -42,25 +38,28 @@ void one_arc_in_and_one_out (node *graph[graphElements]) {
         temp = graph[i]->next;
 
         while (temp != nullptr) {
-            map<char, int>::iterator node_found = all_with_one_out.find (temp->key);
-            if (node_found == all_with_one_out.end()) {
+            map<char, int>::iterator node_found = all_with_none_out.find (temp->key);
+            if (node_found == all_with_none_out.end()) {
                 temp = temp->next;
                 continue;
             }
 
-            if (node_found->second <= 2) {
+            // if there is only one INCREASE
+            if (node_found->second == 1) {
                 node_found->second++;
                 temp = temp->next;
                 continue;
             }
 
-            all_with_one_out.erase(node_found);
             temp = temp->next;
         }
     }
 
-    for(auto it = all_with_one_out.begin(); it != all_with_one_out.end(); ++it) {
-        cout << it->first << " ";
+    for(auto it = all_with_none_out.begin(); it != all_with_none_out.end(); ++it) {
+        if (it->second == 1) {
+            delete_node(graph, it->first);
+            cout << it->first << " ";
+        }
     }
 }
 */

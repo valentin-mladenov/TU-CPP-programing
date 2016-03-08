@@ -2,6 +2,7 @@
 // Created by hudson on 6.3.2016 г..
 //
 
+/*
 using namespace std;
 
 const int graphElements = 5;
@@ -22,3 +23,4 @@ void delete_node_with_max_value (node *graph[graphElements]){
 
     delete_node(graph, maxKey);
 }
+*/
