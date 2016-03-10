@@ -2,6 +2,7 @@
 // Created by hudson on 6.3.2016 г..
 //
 
+/*
 void one_arc_in_and_one_out (node *graph[graphElements]) {
     // first find all that have ONlY one arc OUT.
     map<char, int> all_with_one_out;
@@ -57,3 +58,4 @@ void one_arc_in_and_one_out (node *graph[graphElements]) {
     }
 }
 
+*/
