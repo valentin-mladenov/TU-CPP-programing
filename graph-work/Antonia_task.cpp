@@ -2,19 +2,6 @@
 // Created by hudson on 6.3.2016 г..
 //
 
-/*
-#include <iostream>
-#include <vector>
-#include <map>
-
-using namespace std;
-
-const int graphElements = 5;
-struct node {
-    char key;
-    node *next;
-} *graph[graphElements];
-
 void two_arc_out_and_none_in (node *graph[graphElements]) {
     // first find all that have ONlY two arc OUT.
     map<char, int> all_with_two_out;
@@ -70,4 +57,3 @@ void two_arc_out_and_none_in (node *graph[graphElements]) {
         cout << it->first << " ";
     }
 }
-*/

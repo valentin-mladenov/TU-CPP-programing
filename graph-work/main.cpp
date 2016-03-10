@@ -14,6 +14,10 @@ struct node {
     node *next;
 } *graph[graphElements];
 
+void find_snare_arc(node *pNode[]);
+
+void graf_ranking(node *pNode[]);
+
 void init(node *graph[graphElements]) {
     for (int i = 0; i < graphElements; ++i) {
         graph[i] = nullptr;
@@ -247,3 +251,6 @@ int main() {
         }
     }
 }
+
+
+

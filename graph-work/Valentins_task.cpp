@@ -2,19 +2,6 @@
 // Created by hudson on 6.3.2016 г..
 //
 
-/*
-#include <iostream>
-#include <vector>
-#include <map>
-
-using namespace std;
-
-const int graphElements = 5;
-struct node {
-    char key;
-    node *next;
-} *graph[graphElements];
-
 void one_arc_in_and_one_out (node *graph[graphElements]) {
     // first find all that have ONlY one arc OUT.
     map<char, int> all_with_one_out;
@@ -69,4 +56,4 @@ void one_arc_in_and_one_out (node *graph[graphElements]) {
         }
     }
 }
-*/
+

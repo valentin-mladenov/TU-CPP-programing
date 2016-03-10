@@ -2,19 +2,6 @@
 // Created by hudson on 8.3.2016 г..
 //
 
-/*
-#include <iostream>
-#include <vector>
-#include <map>
-
-using namespace std;
-
-const int graphElements = 5;
-struct node {
-    char key;
-    node *next;
-} *graph[graphElements];
-
 void delete_all_isolated_nodes(node *graph[graphElements]) {
     // first find all that do not have OUTBOUND arcs.
     map<char, int> all_with_none_out;
@@ -62,4 +49,3 @@ void delete_all_isolated_nodes(node *graph[graphElements]) {
         }
     }
 }
-*/
