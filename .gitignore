@@ -77,3 +77,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+graph-work/.idea/.name
+graph-work/.idea/dictionaries/hudso.xml
+graph-work/.idea/modules.xml
+graph-work/.idea/graph-work.iml
+graph-work/.idea/encodings.xml
+graph-work/.idea/misc.xml
+graph-work/.idea/vcs.xml
+graph-work/.idea/workspace.xml
+graph-work/CMakeLists.txt
