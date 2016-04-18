@@ -5,6 +5,10 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <sstream>
+#include <iterator>
+#include <string>
+
 
 using namespace std;
 
@@ -308,7 +312,7 @@ int main() {
                 break;
             case 8:
                 // TODO: MAIN WORK. ;)
-                one_arc_in_and_one_out(graph);
+                nodesWithMaxInboundArcs(graph);
                 break;
             case 9:
                 return 0;
