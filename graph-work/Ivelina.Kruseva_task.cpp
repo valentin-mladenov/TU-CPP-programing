@@ -3,7 +3,7 @@
 //
 
 
-void deleteNodeWithMaxExitArcs (node *graph[graphElements]){
+/*void deleteNodeWithMaxExitArcs (node *graph[graphElements]){
     char maxExitArcsKey;
     int maxCounter = 0;
 

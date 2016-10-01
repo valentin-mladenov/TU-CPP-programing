@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void nodesWithMaxInboundArcs (node *graph[graphElements]) {
+/*void nodesWithMaxInboundArcs (node *graph[graphElements]) {
     vector<char> nodesWithMaxInboundArcs;
     int maxCounter = 0;
 

@@ -1,13 +1,8 @@
 //
-// Created by hudson on 17.2.2016 г..
+// Created by hudson on 17.2.2016.
 //
 
 #include <iostream>
-#include <vector>
-#include <map>
-#include <sstream>
-#include <iterator>
-#include <string>
 
 
 using namespace std;
@@ -17,10 +12,6 @@ struct node {
     char key;
     node *next;
 } *graph[graphElements];
-
-void find_snare_arc(node *pNode[]);
-
-void graf_ranking(node *pNode[]);
 
 void init(node *graph[graphElements]) {
     for (int i = 0; i < graphElements; ++i) {
@@ -171,67 +162,29 @@ void list_nodes (node *graph[graphElements]) {
 }
 
 
-void one_arc_in_and_one_out (node *graph[graphElements]) {
-    // first find all that have ONlY one arc OUT.
-    map<char, int> all_with_one_out;
-    for (int i = 0; i < graphElements; i++) {
-        if (graph[i] == nullptr) {
-            continue;
-        }
-
-        if (graph[i]->next == nullptr) {
-            continue;
-        }
-
-        if (graph[i]->next->next == nullptr) {
-            //all_with_one_out[i] = graph[i]->key;
-            all_with_one_out[graph[i]->key] = 1;
+void showNodesWithMaxAndMinValue (node *graph[graphElements]){
+    char minKey;
+    char maxKey = minKey = graph[0]->key;
+    for (int i = 0; i < graphElements; ++i) {
+        // IF NULL then there is no element.
+        if (graph[i] != nullptr) {
+            // IF current key value is higher than the current Maximum set it as such
+            if (graph[i]->key > maxKey) {
+                maxKey = graph[i]->key;
+            }
+            // IF current key value is lower than the current Minimum set it as such
+            else if(graph[i]->key < minKey){
+                minKey = graph[i]->key;
+            }
         }
     }
 
-    if (!all_with_one_out.empty()) {
-        // now lets check how many have incoming arcs.
-        for (int i = 0; i < graphElements; i++) {
-            node *temp;
-            if (graph[i] == nullptr) {
-                continue;
-            }
-            temp = graph[i]->next;
-
-            while (temp != nullptr) {
-                map<char, int>::iterator node_found = all_with_one_out.find(temp->key);
-                if (node_found == all_with_one_out.end()) {
-                    temp = temp->next;
-                    continue;
-                }
-
-                // increase on FIRST occurance
-                if (node_found->second <= 2) {
-                    node_found->second++;
-                    temp = temp->next;
-                    continue;
-                }
-
-                // delete on SECOND occurance
-                all_with_one_out.erase(node_found);
-                temp = temp->next;
-            }
-        }
-
-        if (!all_with_one_out.empty()) {
-        // print the remaining nodes
-            cout << "Nodes found: " << all_with_one_out.size() << endl;
-            for (auto it = all_with_one_out.begin(); it != all_with_one_out.end(); ++it) {
-                // print only that have IN and OUT.
-                if (it->second == 2) {
-                    cout << it->first << " ";
-                }
-            }
-        } else {
-            cout << "NONE!" << endl;
-        }
+    cout << "Nodes found: " << endl;
+    if (minKey == maxKey) {
+        cout << "Only one node!" << minKey << endl;
     } else {
-        cout << "NONE!" << endl;
+        cout << "Min key!: " << minKey << endl;
+        cout << "Max key!: " << maxKey << endl;
     }
 }
 
@@ -312,7 +265,7 @@ int main() {
                 break;
             case 8:
                 // TODO: MAIN WORK. ;)
-                nodesWithMaxInboundArcs(graph);
+                showNodesWithMaxAndMinValue(graph);
                 break;
             case 9:
                 return 0;

@@ -3,7 +3,7 @@
 //
 
 
-void delete_node_with_max_value (node *graph[graphElements]){
+/*void delete_node_with_max_value (node *graph[graphElements]){
     char maxKey = graph[0]->key;
     for (int i = 0; i < graphElements; ++i) {
         if (graph[i] != nullptr) {
