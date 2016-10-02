@@ -59,9 +59,7 @@ int main() {
             case 3:
                 if(bet == 0){
                     cout  << "Place a bet. Current bet is 0.";
-
                     break;
-
                 }
                 while (cin.get()!='\n')
                     ;
