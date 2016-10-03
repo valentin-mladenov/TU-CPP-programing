@@ -1,0 +1,8 @@
+//
+// Created by hudson on 3.10.2016 г..
+//
+
+#ifndef QUICKSORT3OFDECK_DOUBLE_LIST_H
+#define QUICKSORT3OFDECK_DOUBLE_LIST_H
+
+#endif //QUICKSORT3OFDECK_DOUBLE_LIST_H
