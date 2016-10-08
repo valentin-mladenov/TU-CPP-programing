@@ -1,0 +1,1 @@
+Quick sort finished in: 1.79931e-310 milliseconds. For  with  elements.

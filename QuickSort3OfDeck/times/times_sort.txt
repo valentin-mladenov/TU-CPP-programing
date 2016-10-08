@@ -1,0 +1,29 @@
+Quick sort finished in: 5.011 milliseconds. For sort with 1000 elements.
+Quick sort finished in: 6.001 milliseconds. For sort with 1000 elements.
+Quick sort finished in: 6.001 milliseconds. For sort with 1000 elements.
+Quick sort finished in: 6.001 milliseconds. For sort with 1000 elements.
+Quick sort finished in: 6.020 milliseconds. For sort with 1000 elements.
+
+Quick sort finished in: 129.006 milliseconds. For sort with 5000 elements.
+Quick sort finished in: 134.050 milliseconds. For sort with 5000 elements.
+Quick sort finished in: 135.028 milliseconds. For sort with 5000 elements.
+Quick sort finished in: 135.053 milliseconds. For sort with 5000 elements.
+Quick sort finished in: 143.018 milliseconds. For sort with 5000 elements.
+
+Quick sort finished in: 554.568 milliseconds. For sort with 10000 elements.
+Quick sort finished in: 555.071 milliseconds. For sort with 10000 elements.
+Quick sort finished in: 557.582 milliseconds. For sort with 10000 elements.
+Quick sort finished in: 558.555 milliseconds. For sort with 10000 elements.
+Quick sort finished in: 562.588 milliseconds. For sort with 10000 elements.
+
+Quick sort finished in: 2247.30 milliseconds. For sort with 20000 elements.
+Quick sort finished in: 2255.32 milliseconds. For sort with 20000 elements.
+Quick sort finished in: 2267.70 milliseconds. For sort with 20000 elements.
+Quick sort finished in: 2278.33 milliseconds. For sort with 20000 elements.
+Quick sort finished in: 2283.30 milliseconds. For sort with 20000 elements.
+
+Quick sort finished in: 5047.66 milliseconds. For sort with 30000 elements.
+Quick sort finished in: 5075.06 milliseconds. For sort with 30000 elements.
+Quick sort finished in: 5090.94 milliseconds. For sort with 30000 elements.
+Quick sort finished in: 5126.30 milliseconds. For sort with 30000 elements.
+Quick sort finished in: 5187.63 milliseconds. For sort with 30000 elements.

@@ -8,18 +8,13 @@
 /*
  Class Declaration
  */
-class deck
+class Deck
 {
 public:
     void push_start(int value);
     void push_back(int value);
-    int pop_back(int value);
-    int pop_start(int value);
-    deck()
-    {
-        struct node *start = nullptr;
-        struct node *end = nullptr;
-    }
+    int pop_back();
+    int pop_start();
 };
 
 #endif //QUICKSORT3OFDECK_DECK_H

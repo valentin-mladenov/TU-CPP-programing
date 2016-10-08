@@ -1,0 +1,29 @@
+Quick sort finished in: 3.501 milliseconds. For rev with 1000 elements.
+Quick sort finished in: 3.502 milliseconds. For rev with 1000 elements.
+Quick sort finished in: 3.502 milliseconds. For rev with 1000 elements.
+Quick sort finished in: 3.511 milliseconds. For rev with 1000 elements.
+Quick sort finished in: 4.001 milliseconds. For rev with 1000 elements.
+
+Quick sort finished in: 91.003 milliseconds. For rev with 5000 elements.
+Quick sort finished in: 91.512 milliseconds. For rev with 5000 elements.
+Quick sort finished in: 92.523 milliseconds. For rev with 5000 elements.
+Quick sort finished in: 97.024 milliseconds. For rev with 5000 elements.
+Quick sort finished in: 97.512 milliseconds. For rev with 5000 elements.
+
+Quick sort finished in: 361.859 milliseconds. For rev with 10000 elements.
+Quick sort finished in: 362.060 milliseconds. For rev with 10000 elements.
+Quick sort finished in: 365.050 milliseconds. For rev with 10000 elements.
+Quick sort finished in: 368.059 milliseconds. For rev with 10000 elements.
+Quick sort finished in: 371.703 milliseconds. For rev with 10000 elements.
+
+Quick sort finished in: 1535.21 milliseconds. For rev with 20000 elements.
+Quick sort finished in: 1544.33 milliseconds. For rev with 20000 elements.
+Quick sort finished in: 1552.21 milliseconds. For rev with 20000 elements.
+Quick sort finished in: 1562.95 milliseconds. For rev with 20000 elements.
+Quick sort finished in: 1583.19 milliseconds. For rev with 20000 elements.
+
+Quick sort finished in: 3562.96 milliseconds. For rev with 30000 elements.
+Quick sort finished in: 3640.57 milliseconds. For rev with 30000 elements.
+Quick sort finished in: 3647.55 milliseconds. For rev with 30000 elements.
+Quick sort finished in: 3653.26 milliseconds. For rev with 30000 elements.
+Quick sort finished in: 3655.14 milliseconds. For rev with 30000 elements.
