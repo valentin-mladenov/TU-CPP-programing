@@ -232,6 +232,28 @@ int double_list_pop_start()
     return out;
 }
 
+/*
+ * Pop of element at the start
+ */
+int double_list_pop_end()
+{
+    if (dl_end == nullptr) {
+        cout << "First Create the deck." << endl;
+        return -1;
+    }
+
+    int out = dl_end->key;
+
+    if (dl_end->prev == nullptr){
+        dl_start = dl_end->prev;
+    } else {
+        dl_end->prev->next = nullptr;
+    }
+    dl_end = dl_end->prev;
+
+    return out;
+}
+
 
 /// END Double Link List Declaration
 
@@ -282,6 +304,51 @@ dl_node *partition(dl_node *start, dl_node *end)
  */
 void _quickSort(struct dl_node* start, struct dl_node* end)
 {
+    // check if the doubly linked list is initially sorted. ASC or DSC order.
+    // this check was turned OFF in the measurement.
+    if(start == dl_start && end == dl_end) {
+        dl_node* temp;
+
+        // for ASC order.
+        temp = start;
+        while (temp->next != end && temp->key <= temp->next->key) {
+            temp = temp->next;
+        }
+
+        // return if sorted in ASC order
+        if (temp->next == end) return;
+
+        // for DSC order.
+        temp = end;
+        while (temp->prev != start && temp->key <= temp->prev->key) {
+            temp = temp->prev;
+        }
+
+        //  if sorted in DSC order. use the deck.
+        if (temp->prev == start) {
+            int key;
+
+            // fill the deck in reverse order and live the list empty.
+            while (dl_start != nullptr) {
+                key = double_list_pop_start();
+                deck_push_start(key);
+            }
+
+            // fill the list in normal order and live the deck empty.
+            while(true){
+                key = deck_pop_start();
+
+                if (key == -1){
+                    break;
+                }
+
+                double_list_push_back(key);
+            }
+
+            return;
+        }
+    }
+    
     if (end != nullptr && start != end && start != end->next)
     {
         struct dl_node *p = partition(start, end);
@@ -290,7 +357,9 @@ void _quickSort(struct dl_node* start, struct dl_node* end)
     }
 }
 
-// The main function to sort a linked list. It mainly calls _quickSort()
+/*
+ * The main function to sort a linked list. It mainly calls _quickSort()
+ */
 void quickSort()
 {
     _quickSort(dl_start, dl_end);

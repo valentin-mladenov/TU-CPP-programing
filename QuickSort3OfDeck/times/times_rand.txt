@@ -16,9 +16,9 @@ Quick sort finished in: 1.988 milliseconds. For rand with 10000 elements.
 Quick sort finished in: 1.999 milliseconds. For rand with 10000 elements.
 Quick sort finished in: 2.000 milliseconds. For rand with 10000 elements.
 
+Quick sort finished in: 8.9860 milliseconds. For rand with 50000 elements.
 Quick sort finished in: 9.0310 milliseconds. For rand with 50000 elements.
 Quick sort finished in: 9.0320 milliseconds. For rand with 50000 elements.
-Quick sort finished in: 8.9860 milliseconds. For rand with 50000 elements.
 Quick sort finished in: 9.9880 milliseconds. For rand with 50000 elements.
 Quick sort finished in: 10.030 milliseconds. For rand with 50000 elements.
 

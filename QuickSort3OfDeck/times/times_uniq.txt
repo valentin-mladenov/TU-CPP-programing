@@ -10,11 +10,11 @@ Quick sort finished in: 3.498 milliseconds. For uniq with 5000 elements.
 Quick sort finished in: 3.500 milliseconds. For uniq with 5000 elements.
 Quick sort finished in: 3.511 milliseconds. For uniq with 5000 elements.
 
-Quick sort finished in: 27.514 milliseconds. For uniq with 10000 elements.
-Quick sort finished in: 27.514 milliseconds. For uniq with 10000 elements.
 Quick sort finished in: 26.515 milliseconds. For uniq with 10000 elements.
-Quick sort finished in: 28.491 milliseconds. For uniq with 10000 elements.
 Quick sort finished in: 27.505 milliseconds. For uniq with 10000 elements.
+Quick sort finished in: 27.514 milliseconds. For uniq with 10000 elements.
+Quick sort finished in: 27.514 milliseconds. For uniq with 10000 elements.
+Quick sort finished in: 28.491 milliseconds. For uniq with 10000 elements.
 
 Quick sort finished in: 139.529 milliseconds. For uniq with 50000 elements.
 Quick sort finished in: 141.030 milliseconds. For uniq with 50000 elements.
@@ -28,8 +28,8 @@ Quick sort finished in: 551.070 milliseconds. For uniq with 100000 elements.
 Quick sort finished in: 569.078 milliseconds. For uniq with 100000 elements.
 Quick sort finished in: 575.092 milliseconds. For uniq with 100000 elements.
 
-Quick sort finished in: 2870.51 milliseconds. For uniq with 500000 elements.
-Quick sort finished in: 2836.43 milliseconds. For uniq with 500000 elements.
-Quick sort finished in: 2841.14 milliseconds. For uniq with 500000 elements.
-Quick sort finished in: 2837.92 milliseconds. For uniq with 500000 elements.
 Quick sort finished in: 2833.94 milliseconds. For uniq with 500000 elements.
+Quick sort finished in: 2836.43 milliseconds. For uniq with 500000 elements.
+Quick sort finished in: 2837.92 milliseconds. For uniq with 500000 elements.
+Quick sort finished in: 2841.14 milliseconds. For uniq with 500000 elements.
+Quick sort finished in: 2870.51 milliseconds. For uniq with 500000 elements.
