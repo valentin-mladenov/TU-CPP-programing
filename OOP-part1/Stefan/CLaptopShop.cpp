@@ -14,14 +14,14 @@ CLaptopShop::CLaptopShop(std::vector<CLaptop> vctr)
 	m_vSales = vctr;
 }
 
-//Метод за добавяне на лаптоп
+//РњРµС‚РѕРґ Р·Р° РґРѕР±Р°РІСЏРЅРµ РЅР° Р»Р°РїС‚РѕРї
 void CLaptopShop::AddLaptop(CLaptop &element)
 {
 	m_vSales.push_back(element);
 }
 
-//Визуализация на всички лаптопи, като се използва
-//вече предефинирания оператор за изместване в ostream '<<'
+//Р’РёР·СѓР°Р»РёР·Р°С†РёСЏ РЅР° РІСЃРёС‡РєРё Р»Р°РїС‚РѕРїРё, РєР°С‚Рѕ СЃРµ РёР·РїРѕР»Р·РІР°
+//РІРµС‡Рµ РїСЂРµРґРµС„РёРЅРёСЂР°РЅРёСЏ РѕРїРµСЂР°С‚РѕСЂ Р·Р° РёР·РјРµСЃС‚РІР°РЅРµ РІ ostream '<<'
 void CLaptopShop::Show()
 {
 	for each (auto element in m_vSales)
@@ -30,7 +30,7 @@ void CLaptopShop::Show()
 	}
 }
 
-//Метод за преброяване на всички лаптопи по даден производител
+//РњРµС‚РѕРґ Р·Р° РїСЂРµР±СЂРѕСЏРІР°РЅРµ РЅР° РІСЃРёС‡РєРё Р»Р°РїС‚РѕРїРё РїРѕ РґР°РґРµРЅ РїСЂРѕРёР·РІРѕРґРёС‚РµР»
 void CLaptopShop::MaxSalesByProducer(IN std::string strProducer, OUT int& nNum)
 {
 	nNum = 0;
@@ -45,7 +45,7 @@ void CLaptopShop::MaxSalesByProducer(IN std::string strProducer, OUT int& nNum)
 	}
 }
 
-//Метод за преброяване на всички лаптопи по размер на екрана
+//РњРµС‚РѕРґ Р·Р° РїСЂРµР±СЂРѕСЏРІР°РЅРµ РЅР° РІСЃРёС‡РєРё Р»Р°РїС‚РѕРїРё РїРѕ СЂР°Р·РјРµСЂ РЅР° РµРєСЂР°РЅР°
 void CLaptopShop::MaxSalesByScreenSize(IN const int& nScreenSize, OUT int& nNum)
 {
 	nNum = 0;

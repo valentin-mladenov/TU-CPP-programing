@@ -15,23 +15,23 @@ int main()
 	CLaptopConstructorDemonstration();
 	CLaptopInOutDemonstration();
 	CLaptopComparisonDemonstration();
-	CLaptopShopDemonstration();	
+	CLaptopShopDemonstration();
 
 	return 0;
 }
 
-//Демонстрира конструкторите в класа. В последния случай се приравняват два обекта, което извиква предифинирания оператор за присвояване
-//Той е предифиниран така, че да прави deep coppy и не копира побитово обекта, а заделя памет в heap-а и пренасочва указателя към него,
-//което се вижда при проверка на адресите на указателя, които са различни
+//Р”РµРјРѕРЅСЃС‚СЂРёСЂР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРёС‚Рµ РІ РєР»Р°СЃР°. Р’ РїРѕСЃР»РµРґРЅРёСЏ СЃР»СѓС‡Р°Р№ СЃРµ РїСЂРёСЂР°РІРЅСЏРІР°С‚ РґРІР° РѕР±РµРєС‚Р°, РєРѕРµС‚Рѕ РёР·РІРёРєРІР° РїСЂРµРґРёС„РёРЅРёСЂР°РЅРёСЏ РѕРїРµСЂР°С‚РѕСЂ Р·Р° РїСЂРёСЃРІРѕСЏРІР°РЅРµ
+//РўРѕР№ Рµ РїСЂРµРґРёС„РёРЅРёСЂР°РЅ С‚Р°РєР°, С‡Рµ РґР° РїСЂР°РІРё deep coppy Рё РЅРµ РєРѕРїРёСЂР° РїРѕР±РёС‚РѕРІРѕ РѕР±РµРєС‚Р°, Р° Р·Р°РґРµР»СЏ РїР°РјРµС‚ РІ heap-Р° Рё РїСЂРµРЅР°СЃРѕС‡РІР° СѓРєР°Р·Р°С‚РµР»СЏ РєСЉРј РЅРµРіРѕ,
+//РєРѕРµС‚Рѕ СЃРµ РІРёР¶РґР° РїСЂРё РїСЂРѕРІРµСЂРєР° РЅР° Р°РґСЂРµСЃРёС‚Рµ РЅР° СѓРєР°Р·Р°С‚РµР»СЏ, РєРѕРёС‚Рѕ СЃР° СЂР°Р·Р»РёС‡РЅРё
 void CLaptopConstructorDemonstration()
 {
 	std::system("CLS");
 	std::cout << std::endl << "Constructors Demonstration: " << std::endl;
 
-	CLaptop laptop1;				//Извиква се Конструктора по подразбиране без параметри	
-	CLaptop laptop2(17);			//Извиква се конструктора с един параметър int
-	CLaptop laptop3("Asus", 15);	//Извиква се конструктора с 2 параметъра string/int
-	CLaptop laptop4 = laptop3;		//Извиква се конструктора за копие, който прави deap coppy
+	CLaptop laptop1;				//РР·РІРёРєРІР° СЃРµ РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ Р±РµР· РїР°СЂР°РјРµС‚СЂРё
+	CLaptop laptop2(17);			//РР·РІРёРєРІР° СЃРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ РµРґРёРЅ РїР°СЂР°РјРµС‚СЉСЂ int
+	CLaptop laptop3("Asus", 15);	//РР·РІРёРєРІР° СЃРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ 2 РїР°СЂР°РјРµС‚СЉСЂР° string/int
+	CLaptop laptop4 = laptop3;		//РР·РІРёРєРІР° СЃРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Р·Р° РєРѕРїРёРµ, РєРѕР№С‚Рѕ РїСЂР°РІРё deap coppy
 
 	std::cout
 		<< "Laptop 1:" << std::endl
@@ -42,18 +42,18 @@ void CLaptopConstructorDemonstration()
 
 		<< "Laptop 3:" << std::endl
 		<< laptop3 << std::endl
-		<< "Address of screen size pointer to heap: " << laptop3.GetScreenSize() << std::endl	//Адреса на указателя на laptop3
+		<< "Address of screen size pointer to heap: " << laptop3.GetScreenSize() << std::endl	//РђРґСЂРµСЃР° РЅР° СѓРєР°Р·Р°С‚РµР»СЏ РЅР° laptop3
 
 		<< "Laptop 4:" << std::endl
 		<< laptop4 << std::endl
-		<< "Address of screen size pointer to heap: " << laptop4.GetScreenSize();				//Адреса на указателя на laptop4
+		<< "Address of screen size pointer to heap: " << laptop4.GetScreenSize();				//РђРґСЂРµСЃР° РЅР° СѓРєР°Р·Р°С‚РµР»СЏ РЅР° laptop4
 
 
 	std::cout << std::endl << std::endl;
 	std::system("PAUSE");
 }
 
-//Демонстрира предифинираните оператори за изместване в и от поток (в случая istream и ostream)
+//Р”РµРјРѕРЅСЃС‚СЂРёСЂР° РїСЂРµРґРёС„РёРЅРёСЂР°РЅРёС‚Рµ РѕРїРµСЂР°С‚РѕСЂРё Р·Р° РёР·РјРµСЃС‚РІР°РЅРµ РІ Рё РѕС‚ РїРѕС‚РѕРє (РІ СЃР»СѓС‡Р°СЏ istream Рё ostream)
 void CLaptopInOutDemonstration()
 {
 	std::system("CLS");
@@ -73,7 +73,7 @@ void CLaptopInOutDemonstration()
 
 }
 
-//Демонстрира предифинираните оператори за сравнение между обектите, които сравнват размерите на екраните им
+//Р”РµРјРѕРЅСЃС‚СЂРёСЂР° РїСЂРµРґРёС„РёРЅРёСЂР°РЅРёС‚Рµ РѕРїРµСЂР°С‚РѕСЂРё Р·Р° СЃСЂР°РІРЅРµРЅРёРµ РјРµР¶РґСѓ РѕР±РµРєС‚РёС‚Рµ, РєРѕРёС‚Рѕ СЃСЂР°РІРЅРІР°С‚ СЂР°Р·РјРµСЂРёС‚Рµ РЅР° РµРєСЂР°РЅРёС‚Рµ РёРј
 void CLaptopComparisonDemonstration()
 {
 	std::system("CLS");
@@ -98,7 +98,7 @@ void CLaptopComparisonDemonstration()
 	std::system("PAUSE");
 }
 
-//Демонстрира класа CLaptopShop и неговите методи
+//Р”РµРјРѕРЅСЃС‚СЂРёСЂР° РєР»Р°СЃР° CLaptopShop Рё РЅРµРіРѕРІРёС‚Рµ РјРµС‚РѕРґРё
 void CLaptopShopDemonstration()
 {
 	std::system("CLS");
@@ -136,4 +136,3 @@ void CLaptopShopDemonstration()
 	std::cout << std::endl << std::endl;
 	std::system("PAUSE");
 }
-
