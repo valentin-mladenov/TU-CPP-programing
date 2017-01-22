@@ -1,3 +1,7 @@
+//
+// Created by hudson on 17.10.2016 г.
+//
+
 #include <iostream>
 #include <cstdlib>
 #include <algorithm>

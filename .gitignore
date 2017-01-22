@@ -86,3 +86,14 @@ graph-work/.idea/misc.xml
 graph-work/.idea/vcs.xml
 graph-work/.idea/workspace.xml
 graph-work/CMakeLists.txt
+*.iml
+casino.slot.machine/.idea/encodings.xml
+*.xml
+*.cmake
+CurrencyExchange/cmake-build-debug/CMakeCache.txt
+*.make
+CurrencyExchange/cmake-build-debug/CMakeFiles/CurrencyExchange.dir/link.txt
+*.rsp
+CurrencyExchange/cmake-build-debug/CMakeFiles/CurrencyExchange.dir/depend.internal
+*.includecache
+CurrencyExchange/cmake-build-debug/CMakeFiles/feature_tests.bin
