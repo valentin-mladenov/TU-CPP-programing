@@ -3,7 +3,6 @@
 //
 
 #include "CFXDayData.h"
-#include "stdafx.h"
 #include <sstream>
 
 CFXDayData::CFXDayData() : CFXDayData(0, 0) { }

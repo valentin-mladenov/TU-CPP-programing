@@ -97,3 +97,4 @@ CurrencyExchange/cmake-build-debug/CMakeFiles/CurrencyExchange.dir/link.txt
 CurrencyExchange/cmake-build-debug/CMakeFiles/CurrencyExchange.dir/depend.internal
 *.includecache
 CurrencyExchange/cmake-build-debug/CMakeFiles/feature_tests.bin
+*.bin

@@ -5,36 +5,53 @@
 #include "CFXMonthData.h"
 #include <iostream>     // std::cerr
 #include <fstream>      // std::ifstream
+#include <stdlib.h>
 #include <cstdlib>
 #include <sstream>
 
 CFXMonthData::CFXMonthData(std::string fileName) {
     std::ifstream file;
     std::string line;
-    file.exceptions ( std::ifstream::badbit );
+    file.exceptions (std::ifstream::badbit);
 
     // Opening a file in constructor is almost certainly a bad idea.
     // Very few cases when opening a file during construction is appropriate.
     file.open(fileName);
-    if (!file) throw std::ifstream::failure("File not found");
+    if (!file) {
+        file.close();
+        throw std::ifstream::failure("File not found!!!");
+    }
+
+    if (file.peek() == std::ifstream::traits_type::eof()) {
+        file.close();
+        throw std::ifstream::failure("File is empty!!!");
+    }
 
     while (!file.eof() && getline(file, line)) {
         if (!line.empty()){
             std::string monthDelimiter = ":";
             int foundMonthDelimiter = line.find(monthDelimiter);
 
-            if (foundMonthDelimiter == -1) throw std::ifstream::failure("No month name in file.");
+            if (foundMonthDelimiter == -1) {
+                file.close();
+                throw std::ifstream::failure("No month name in file!!!");
+            }
 
             this->monthName = line.substr(0, foundMonthDelimiter);
 
             std::string dateExchanges = line.substr(++foundMonthDelimiter, line.length());
 
             std::string dateDelimiter = ",";
-            int pos = 0;
+            unsigned int pos = 0;
 
-            if(dateExchanges.empty()) throw std::ifstream::failure("No exchange rate data.");
+            if(dateExchanges.empty()) {
+                file.close();
+                throw std::ifstream::failure("No exchange rate data!!!");
+            }
 
             while (true) {
+                char* pEnd;
+
                 pos = (dateExchanges.find(dateDelimiter) == -1)
                         ? dateExchanges.length()
                         : dateExchanges.find(dateDelimiter);
@@ -42,11 +59,27 @@ CFXMonthData::CFXMonthData(std::string fileName) {
                 std::string currentDate = dateExchanges.substr(0, pos);
 
                 std::string dataDelimiter = " ";
-                int currentDateDelimiter = currentDate.find(dataDelimiter);
+                unsigned int currentDateDelimiter = currentDate.find(dataDelimiter);
 
                 std::string dateString = currentDate.substr(0, currentDateDelimiter);
-                int date = std::atoi(dateString.c_str());
-                double exchangeRate = std::atof(currentDate.substr(++currentDateDelimiter, currentDate.length()).c_str());
+
+                int date = (int) std::strtod(dateString.c_str(), &pEnd);
+
+                if (dateString.find_first_not_of("0123456789") != std::string::npos) {
+                    dateExchanges.erase(0, (++pos));
+                    printf("fail - the following characters are not part of a int: %s\n", dateString.c_str());
+                    continue;
+                }
+
+                std::string exchangeString = currentDate.substr(++currentDateDelimiter, currentDate.length());
+
+                double exchangeRate = std::strtod(exchangeString.c_str(), &pEnd);
+
+                if (exchangeString.find_first_not_of("0123456789.") != std::string::npos) {
+                    dateExchanges.erase(0, (++pos));
+                    printf("fail - the following characters are not part of a double: %s\n", exchangeString.c_str());
+                    continue;
+                }
 
                 this->exchangeRates.push_back(CFXDayData(date, exchangeRate));
 
@@ -72,7 +105,7 @@ void CFXMonthData::setMonthName(std::string monthName) {
     this->monthName = monthName;
 }
 
-double CFXMonthData::differenceOfRatesMonhtly(double coefficient) {
+double CFXMonthData::differenceOfRatesMonthly(double coefficient) {
     double out = 0;
 
     CFXMonthData differenceDayToDay = this->differenceInRatesDayToDay();

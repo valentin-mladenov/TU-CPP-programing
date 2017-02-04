@@ -26,7 +26,7 @@ public:
     std::string getMonthName();
     void setMonthName(std::string monthName);
     CFXMonthData differenceInRatesDayToDay();
-    double differenceOfRatesMonhtly(double coefficient);
+    double differenceOfRatesMonthly(double coefficient);
 
     //Operator Overload
     friend std::ostream& operator<<(std::ostream &out, const CFXMonthData &obj);
